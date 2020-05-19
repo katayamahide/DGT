@@ -18,12 +18,50 @@ a {
 }
 
 .top-wrapper {
+  position   : relative;
   padding: 180px 0 100px 0;
-  background-image: url(top.png);
-  background-size: cover;
   color: white;
   text-align: center;
 }
+
+@keyframes bgAnime {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+ 25% { opacity: 1; }
+ 30% { opacity: 0; }
+100% { opacity: 0; }
+}
+
+.top-wrapper .bgImg {
+  position   : absolute;
+  top        : 0;
+  left       : 0;
+  bottom     : 0;
+  right      : 0;
+  opacity    : 0;
+  animation  : bgAnime 20s infinite;   /* 4画像 × 各5s = 20s */
+}
+
+.top-wrapper .src1 {
+  background: url(top4.png); 
+  background-size: cover;
+}
+.top-wrapper .src2 {
+  background-image : url(top1.png);   /* 背景の画像を指定 */
+  animation-delay  : 5s;
+  background-size: cover;
+}
+.top-wrapper .src3 {
+  background-image : url(top2.png);   /* 背景の画像を指定 */
+  animation-delay  : 10s;
+  background-size: cover;
+}
+.top-wrapper .src4 {
+  background-image : url(top3.png);   /* 背景の画像を指定 */
+  animation-delay  : 15s;
+  background-size: cover;
+}
+
 
 .top-wrapper h1 {
   opacity: 0.7;
@@ -47,7 +85,7 @@ a {
   margin-bottom: 20px;
 }
 
-.signup {
+.instagram {
   background-color: #CF2E92;
 }
 
@@ -70,7 +108,7 @@ a {
 }
 
 .btn:hover {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 .fa {
@@ -81,7 +119,7 @@ header {
   height: 65px;
   width: 100%;
   background-color: rgba(34,49,52,0.9);
-  position :fixed;
+  position: fixed;
   top: 0;
   z-index: 10;
 }
@@ -144,7 +182,28 @@ header {
 
 .service-icon {
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px; 
+  height: 200px;
+  border-radius: 100px;
 }
+
+.no1{
+  background: linear-gradient(to right, rgb(132, 208, 169), rgb(4, 173, 170)); 
+} 
+
+.no2{
+  background: linear-gradient(to right,rgb(237, 205, 95), rgb(232, 182, 64)); 
+}
+
+.no3{
+  background: linear-gradient(to right, rgb(238, 177, 162), rgb(201, 97, 101));
+}
+
+.no4{
+  background: linear-gradient(to right, rgb(181, 206, 235), rgb(99, 141, 215));
+}rgb(107, 157, 218)
 
 .media1 {
   text-align: center;
@@ -152,6 +211,7 @@ header {
 
 .service-icon p {
   position: absolute;
+
   top: 37%;
   width: 100%;
   color: white;
@@ -161,7 +221,7 @@ header {
   width: 80%;
   display: inline-block;
   margin-top: 15px;
-  font-size: 13px;
+  font-size: 15px;
   color: #b3aeb5;
 }
 
